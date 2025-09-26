@@ -40,6 +40,7 @@ class ProfileUser(LoginRequiredMixin, UpdateView):
     Методы:
         get_success_url: Возвращает URL для перенаправления после успешного сохранения
         get_object: Возвращает объект текущего пользователя для редактирования
+        get_context_data: Добавляет в контекст данные о заказах пользователя
     """
 
     model = get_user_model()
@@ -75,6 +76,19 @@ class ProfileUser(LoginRequiredMixin, UpdateView):
         return self.request.user
 
     def get_context_data(self, **kwargs):
+        """
+        Расширяет контекст шаблона данными о заказах пользователя.
+
+        Добавляет в контекст QuerySet заказов текущего пользователя с предварительной
+        загрузкой связанных товаров для оптимизации запросов к базе данных.
+
+        Args:
+            **kwargs: Аргументы ключевых слов для базового метода
+
+        Returns:
+            dict: Расширенный контекст данных для шаблона
+        """
+
         context = super().get_context_data(**kwargs)
         context['orders'] = Order.objects.filter(user=self.request.user).prefetch_related('items')
         return context
