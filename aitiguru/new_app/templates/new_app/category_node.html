@@ -1,0 +1,15 @@
+<li>
+    <a href="{% url 'category_products' node.id %}"
+       {% if current_category and current_category.id == node.id %} style="font-weight:bold;"{% endif %}>
+        {{ node.title }}
+    </a>
+
+    {% if node.get_children %}
+        <ul>
+            {% for child in node.get_children %}
+                {% include "new_app/category_node.html" with node=child current_category=current_category %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
+

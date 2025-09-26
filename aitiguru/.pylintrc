@@ -1,0 +1,30 @@
+[MASTER]
+ignore=CVS
+jobs=1
+load-plugins=pylint_django
+
+[GENERAL]
+django-settings-module=aitiguru.settings
+
+[MESSAGES CONTROL]
+disable=
+    C0114,  # missing-module-docstring
+    C0301,  # line-to-long
+    R0903,  # too-few-public-methods
+
+
+[FORMAT]
+max-line-length=100
+
+
+[DESIGN]
+max-args=6
+max-attributes=10
+
+
+[TYPECHECK]
+ignored-classes=SQLObject
+
+
+[REPORTS]
+output-format=colorized

@@ -1,0 +1,62 @@
+[
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$aLiacOo66qRWrqKbwFWGca$tRNvGZgcQ2Swcno20kKBF5SsTMk5392UGd/yYwrHRzY=",
+    "last_login": "2025-09-25T12:04:02.123Z",
+    "is_superuser": true,
+    "username": "artem",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-09-24T10:54:34.988Z",
+    "title": "ООО \"Ооошка\"",
+    "address": "Какойто адрес",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$wysRs76LIbLi1iV4lMyI1l$OMPC433MR9tbTbu9NBjme5iBgjaFSChh/R2QnRDv4wI=",
+    "last_login": "2025-09-25T11:49:15.752Z",
+    "is_superuser": false,
+    "username": "user1",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-24T10:54:57.747Z",
+    "title": "ООО \"Покупатель\"",
+    "address": "г.Москва, ул.Такаято, д.01",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$5YHJV6ZbiYBstJpQoFiE77$egrm8oKU2cewLXhKkqUptTfsfkGHbKIBO5IutvsViB8=",
+    "last_login": "2025-09-25T11:49:54.233Z",
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-25T08:48:13.662Z",
+    "title": "ООО \"Закупки\"",
+    "address": "г.СП, ул.Ааа, д.12",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

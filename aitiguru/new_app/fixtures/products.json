@@ -1,0 +1,112 @@
+[
+{
+  "model": "new_app.product",
+  "pk": 1,
+  "fields": {
+    "title": "Ноутбук Нагибатор 3000",
+    "cat": 11,
+    "count": 2,
+    "price": "299999.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 2,
+  "fields": {
+    "title": "Ноутбук SuperMegaSkill",
+    "cat": 10,
+    "count": 6,
+    "price": "180000.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 3,
+  "fields": {
+    "title": "Ноутбук Игрушки+",
+    "cat": 11,
+    "count": 0,
+    "price": "250000.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 4,
+  "fields": {
+    "title": "Холодильник Мороз",
+    "cat": 16,
+    "count": 23,
+    "price": "26000.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 5,
+  "fields": {
+    "title": "Морозилка Пелменная",
+    "cat": 16,
+    "count": 8,
+    "price": "10999.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 6,
+  "fields": {
+    "title": "Холодос",
+    "cat": 17,
+    "count": 14,
+    "price": "15000.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 7,
+  "fields": {
+    "title": "Котлетохранилище",
+    "cat": 16,
+    "count": 5,
+    "price": "8000.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 8,
+  "fields": {
+    "title": "Телевизор Домашний",
+    "cat": 19,
+    "count": 15,
+    "price": "19000.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 9,
+  "fields": {
+    "title": "Телевизор на кухню",
+    "cat": 18,
+    "count": 8,
+    "price": "9000.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 10,
+  "fields": {
+    "title": "Телевизор вырвиглаз",
+    "cat": 20,
+    "count": 5,
+    "price": "50000.00"
+  }
+},
+{
+  "model": "new_app.product",
+  "pk": 11,
+  "fields": {
+    "title": "Домашний кинотеатр",
+    "cat": 20,
+    "count": 4,
+    "price": "200000.00"
+  }
+}
+]

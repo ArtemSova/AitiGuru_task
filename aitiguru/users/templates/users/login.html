@@ -1,0 +1,18 @@
+
+<h1>Авторизация</h1>        <!-- Заголовок первого уровня -->
+
+<form method="post">        <!-- Форма для авторизации -->
+    {% csrf_token %}        <!-- csrf -->
+
+
+    <input type="hidden" name="next" value="{{ next }}" />                <!-- ??? нужно для перенаправления (можно указывать при авторизации) -->
+    <div class="form-error">{{ form.non_field_errors }}</div>             <!-- общая коллекция ошибок, не связь с полями -->
+    {% for f in form %}                                                   <!-- перебираем поля формы -->
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>   <!-- выводим поля формы -->
+    <div class="form-error">{{ f.errors }}</div>                          <!-- отображение ошибок -->
+    {% endfor %}
+
+
+    <p><button type="submit">Войти</button></p>         <!-- Кнопка "Войти" -->
+</form>
+

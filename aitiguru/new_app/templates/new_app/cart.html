@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f8f8f8; }
+        .btn { padding: 4px 8px; border: 1px solid #007bff; background: #007bff; color: #fff; text-decoration: none; margin: 0 2px; border-radius: 4px; }
+        .btn:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+
+<h2>Корзина</h2>
+
+{% if cart.items.all %}
+<table>
+    <tr>
+        <th>Товар</th>
+        <th>Цена</th>
+        <th>Количество</th>
+        <th>Сумма</th>
+        <th>Действия</th>
+    </tr>
+    {% for item in cart.items.all %}
+    <tr>
+        <td>{{ item.product.title }}</td>
+        <td>{{ item.price }}</td>
+        <td>
+            <a class="btn" href="{% url 'update_quantity' item.id 'decrease' %}">-</a>
+            {{ item.quantity }}
+            <a class="btn" href="{% url 'update_quantity' item.id 'increase' %}">+</a>
+        </td>
+        <td>{{ item.total_price }}</td>
+        <td>
+            <a class="btn" href="{% url 'remove_from_cart' item.id %}">Удалить</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="summary-container">
+    <h3>Итого: {{ cart.total_price }}</h3>
+</div>
+
+<div class="summary-container">
+    <h3>Итого: {{ cart.total_price }}</h3>
+    <form action="{% url 'checkout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn">Оформить заказ</button>
+    </form>
+</div>
+
+{% else %}
+<p>Корзина пуста</p>
+{% endif %}
+
+<a href="{% url 'home' %}">← Вернуться в магазин</a>
+
+</body>
+</html>
