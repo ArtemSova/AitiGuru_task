@@ -77,6 +77,16 @@
  * Присутствуют документация, линтер и unittest (приложения new_app и users)
  * Написан простой(достаточный) dockerfile
 
+### Примеры страниц
+![Сервис](screenshots/SCR01.png)
+![Сервис](screenshots/SCR02.png)
+![Сервис](screenshots/SCR03.png)
+![Сервис](screenshots/SCR04.png)
+![Сервис](screenshots/SCR05.png)
+![Сервис](screenshots/SCR06.png)
+![Сервис](screenshots/SCR07.png)
+![Сервис](screenshots/SCR08.png)
+
 #### Проверка чистоты кода через pylint
 ![Pylint](screenshots/Pylint.png)
 
