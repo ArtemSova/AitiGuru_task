@@ -95,13 +95,38 @@ class ProfileUser(LoginRequiredMixin, UpdateView):
 
 
 class RegisterUser(CreateView):
+    """
+    Представление для регистрации нового пользователя.
+
+    Наследует стандартный CreateView Django с кастомной формой регистрации.
+    После успешной регистрации перенаправляет на страницу входа.
+
+    Атрибуты:
+        form_class (RegisterUserForm): Кастомная форма регистрации
+        template_name (str): Путь к HTML-шаблону страницы регистрации
+        extra_context (dict): Дополнительный контекст для шаблона
+        success_url (str): URL для перенаправления после успешной регистрации
+    """
+
     form_class = RegisterUserForm
     template_name = 'users/register.html'
     extra_context = {'title': 'Регистрация'}
-    success_url = reverse_lazy('users:login')  # Перенаправление после успешной регистрации
+    success_url = reverse_lazy('users:login')
 
 
 class UserPasswordChange(PasswordChangeView):
+    """
+    Представление для изменения пароля пользователя.
+
+    Требует авторизации. Использует кастомную форму с валидацией пароля.
+    После успешного изменения пароля перенаправляет на страницу подтверждения.
+
+    Атрибуты:
+        form_class (UserPasswordChangeForm): Кастомная форма изменения пароля
+        template_name (str): Путь к HTML-шаблону формы изменения пароля
+        success_url (str): URL для перенаправления после успешного изменения
+    """
+
     form_class = UserPasswordChangeForm
     success_url = reverse_lazy("users:password_change_done")
     template_name = "users/password_change_form.html"
