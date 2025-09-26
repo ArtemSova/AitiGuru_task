@@ -4,6 +4,7 @@ from django.contrib.auth.views import LoginView, PasswordChangeView
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
 
+from new_app.models import Order
 from .forms import LoginUserForm, RegisterUserForm, ProfileUserForm, UserPasswordChangeForm
 
 
@@ -72,6 +73,11 @@ class ProfileUser(LoginRequiredMixin, UpdateView):
         """
 
         return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['orders'] = Order.objects.filter(user=self.request.user).prefetch_related('items')
+        return context
 
 
 class RegisterUser(CreateView):

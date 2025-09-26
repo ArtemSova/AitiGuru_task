@@ -11,7 +11,36 @@
 
     <p><button type="submit">Сохранить</button></p>
 </form>
+
 <hr>
+
+<h2>Ваши заказы</h2>
+
+{% if orders %}
+    <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th>Номер заказа</th>
+                <th>Дата создания</th>
+                <th>Сумма</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.order_number }}</td>
+                <td>{{ order.created_at|date:"d.m.Y H:i" }}</td>
+                <td>{{ order.total_sum }} ₽</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>У вас пока нет заказов.</p>
+{% endif %}
+
+<hr>
+
 <p><a href="{% url 'users:password_change' %}">Сменить пароль</a></p>
 
 <a href="{% url 'home' %}">← Вернуться в магазин</a>
